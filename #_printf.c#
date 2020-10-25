@@ -7,7 +7,6 @@
 
 int _printf(const char *format, ...)
 {
-<<<<<<< HEAD
 nt print (char * str, ...)
 {
 va_list args;
@@ -23,22 +22,3 @@ char * str_arg;
 	i++;
 	if (str[i] == 'c')
 	{
-
-
-
-=======
->>>>>>> 6c8f70de6d489a4c1c7829a973958de131ce67bc
-
-va_list args;
-int i = 0;
-
-_printf ops[] = {
-	{'c', op_char},
-	{'s', op_string},
-	{'%', op_mod},
-	{'d', op_digit},
-	{'i', op_int},
-	{'\0', NULL}
-};
-
-
