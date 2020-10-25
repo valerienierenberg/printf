@@ -1,17 +1,46 @@
-.TH man 2 "10 December 1945" "0.32" "eniac man page"
+.TH man 2 "10/25/2020" "0.32" "_printf man page"
 .SH NAME
-.B eniac
-- the first electronic general-purpose digital computer.
+.B _printf
+- prints anything to standard output.
 .SH SYNOPSIS
-eniac
+#include "holberton.h"
+.br
+int _printf(const char *format, ...);
 .SH DESCRIPTION
-Eniac was Turing-complete, and able to solve "a large class of numerical problems" through reprogramming.
+.B _printf()
+prints format string specified by user.
+.br
+% - format specifier
+.br
+" " - designates format string
+.br
+c - char specifier
+.br
+d, i - integer specifier
+.br
+s - string specifier
 .SH OPTIONS
-.B eniac
-does not take any options.
+.B _printf
+options - none
+.SH EXAMPLES
+_printf("%d", integer_variable)
+.br
+_printf("%i", integer_variable)
+.br
+_printf("%c", character_variable)
+.br
+_printf("%s", string_variable)
+.br
+_printf("string")
 .SH SEE ALSO
-ENIAC could be programmed to perform complex sequences of operation (2), including loops(2), branches(2), and subroutines(2).
+printf()
+.br
+write()
+.br
+puts()
+.br
+putchar()
 .SH BUGS
 No known bugs.
-.SH AUTHOR
-University of Pennsylvania.
+.SH AUTHORS
+Lauren Dobratz and Valerie Nierenberg
