@@ -4,11 +4,11 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 
-typedef struct _printf
+typedef struct printf_
 {
 	char *op;
-	va_list ;
-} _printf;
+	int (*f)(va_list);
+} printf_;
 
 
 #endif
