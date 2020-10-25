@@ -22,7 +22,7 @@ _printf ops[] = {
 };
 
 while (format)
-	i++;
+{
 for (; i < numprinted; numprinted++)
 {
 	if (format[i] == "%")
@@ -39,6 +39,8 @@ for (; i < numprinted; numprinted++)
 		else if (format[i] == '\0')
 			return (NULL);
 	}
+}
+i++;
 }
 return (numprinted);
 }
