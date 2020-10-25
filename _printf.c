@@ -12,20 +12,16 @@ nt print (char * str, ...)
 va_list args;
 int i = 0
 int j = 0;
-char buff[100]={0}, tmp[20];
 char * str_arg;
-  
+
 	va_start(args, str);
 	while (str && str[i])
 	{
 	if(str[i] == '%')
 	{
 	i++;
-
 	if (str[i] == 'c')
 	{
-	
-
 
 
 
