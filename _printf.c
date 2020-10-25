@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 
 va_list args;
 int i = 0;
+int len = 0;
 
 _printf ops[] = {
 	{'c', op_char},
@@ -20,3 +21,24 @@ _printf ops[] = {
 	{'\0', NULL}
 };
 
+while (format)
+	i++;
+for (; i < len; len++)
+{
+	if (format[i] == "%")
+	{
+		i++;
+		if (format[i] == 's')
+			op_string(args);
+		else if (format[i] == 'c')
+			op_char(args);
+		else if (format[i] == 'd')
+			op_digit(args);
+		else if (format[i] == 'i')
+			op_int(args);
+		else if (format[i] == '\0')
+			return (NULL);
+	}
+}
+return (len);
+}
