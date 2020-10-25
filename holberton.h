@@ -11,4 +11,10 @@ typedef struct printf_
 } printf_;
 
 
+int op_char(va_list one)
+int op_string(va_list two)
+int op_mod(va_list three)
+int op_digit(va_list four)
+int op_int(va_list five)
+
 #endif
