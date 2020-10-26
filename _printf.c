@@ -11,27 +11,26 @@
 */
 int _printf(const char *format, ...)
 {
-va_list args;
-int i = 0;
-int numprinted = 0;
-int j = 0;
-int (*f)(va_list);
+	va_list args;
+	int i = 0;
+	int numprinted = 0;
+	int j = 0;
+	int (*f)(va_list);
 
-printf_ ops[] = {
-	{'c', op_char},
-/*	{'s', op_string},
-*
+	printf_ ops[] = {
+		{'s', op_string},
+		{'c', op_char},
+/**
 *	{'%', op_mod},
 *	{'d', op_digit},
 *	{'i', op_int},
 */
-	{'\0', NULL}
-};
-while (ops[j].op)
-{
+		{'\0', NULL}
+	};
+
+	va_start(args, format);
 	while (format != NULL && format[i] != '\0')
 	{
-		va_start(args, format);
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
@@ -40,23 +39,24 @@ while (ops[j].op)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] != '%')
+			while (ops[j].op)
 			{
-				f = ops[j].f;
-				numprinted = f(args);
-				numprinted++;
-			}
-			if (format[i] == '%')
-			{
-				numprinted++;
-				_putchar('%');
+				if (format[i] != '%' && format[i] == ops[j].op)
+				{
+					f = ops[j].f;
+					numprinted = f(args);
+					numprinted++;
+				}
+				if (format[i] == '%')
+				{
+					numprinted++;
+					_putchar('%');
+				}
+				j++;
 			}
 		}
-		i++;
+	i++;
 	}
-	j++;
 	va_end(args);
+	return (numprinted);
 }
-return (numprinted);
-}
-

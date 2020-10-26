@@ -18,7 +18,7 @@ int op_string(va_list args)
 		return (-1);
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
-	return (i);
+	return (1);
 }
 
 /**
@@ -35,5 +35,5 @@ int op_char(va_list args)
 		return (-1);
 
 	_putchar(c);
-	return (0);
+	return (1);
 }
