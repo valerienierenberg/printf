@@ -4,11 +4,17 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 
-typedef struct _printf
+typedef struct printf_
 {
 	char *op;
-	va_list ;
-} _printf;
+	int (*f)(va_list);
+} printf_;
 
+
+int op_char(va_list one)
+int op_string(va_list two)
+int op_mod(va_list three)
+int op_digit(va_list four)
+int op_int(va_list five)
 
 #endif

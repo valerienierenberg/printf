@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 
 va_list args;
 int i = 0;
-int len = 0;
+int numprinted = 0;
 
 _printf ops[] = {
 	{'c', op_char},
@@ -22,8 +22,8 @@ _printf ops[] = {
 };
 
 while (format)
-	i++;
-for (; i < len; len++)
+{
+for (; i < numprinted; numprinted++)
 {
 	if (format[i] == "%")
 	{
@@ -40,5 +40,7 @@ for (; i < len; len++)
 			return (NULL);
 	}
 }
-return (len);
+i++;
+}
+return (numprinted);
 }
