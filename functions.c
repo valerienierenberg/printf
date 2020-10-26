@@ -9,20 +9,14 @@
 * @a: character
 * Return: void
 */
-void print_string(char)
+void _puts(char *str)
 {
-	int i = 0;
-	va_list args;
+	int i;
 
-	va_start(args, str);
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
 
-	while (str)
-	{
-	str = va_arg(args, char *);
-		_putchar(str);
-		i++;
-	}
-va_end(args);
+	_putchar('\n');
 }
 
 /**
@@ -31,18 +25,4 @@ va_end(args);
 * @b: second integer
 * Return: result of division of a by b
 */
-int op_div(int a, int b)
-{
-return (a / b);
-}
 
-/**
-* op_mod- returns remainder of divivsion of two integers
-* @a: first integer
-* @b: second integer
-* Return: remainder of division of a by b
-*/
-int op_mod(int a, int b)
-{
-return (a % b);
-}

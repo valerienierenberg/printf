@@ -11,6 +11,8 @@ int _printf(const char *format, ...)
 va_list args;
 int i = 0;
 int numprinted = 0;
+int (*f)(va_list);
+char *s;
 
 _printf ops[] = {
 	{'c', op_char},
@@ -23,24 +25,25 @@ _printf ops[] = {
 
 while (format)
 {
+va_start(args, format);
 for (; i < numprinted; numprinted++)
 {
 	if (format[i] == "%")
 	{
 		i++;
-		if (format[i] == 's')
-			op_string(args);
-		else if (format[i] == 'c')
-			op_char(args);
-		else if (format[i] == 'd')
-			op_digit(args);
-		else if (format[i] == 'i')
-			op_int(args);
+		if (format[i] == 'c')
+			i = va_arg(args, char);
+			putchar(i);
+		else if (format[i] == 's')
+			s = va_arg(args, char *);
+			_puts(s);
 		else if (format[i] == '\0')
 			return (NULL);
 	}
 }
 i++;
+}
+va_end(args);
 }
 return (numprinted);
 }
