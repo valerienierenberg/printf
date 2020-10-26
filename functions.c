@@ -11,15 +11,12 @@
 */
 void _puts(char *str)
 {
-	char *s = va_arg(args, char *);
-	unsigned int i;
+	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
 
-		_putchar(s[i]);
-	}
-return (0);
+	_putchar('\n');
 }
 
 /**
@@ -34,7 +31,6 @@ int op_char(va_list args)
 
 	if (!c)
 		return (-1);
-
 	else
 	{
 		_putchar(c);
