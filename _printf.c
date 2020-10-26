@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stddef.h>
 #include "holberton.h"
 /**
 * _printf- prints anything to stdout
@@ -7,13 +12,15 @@
 int _printf(const char *format, ...)
 {
 va_list args;
-int numprinted, j = 0, i = 0;
+int i = 0;
+int numprinted = 0;
+int j = 0;
 int (*f)(va_list);
 
 printf_ ops[] = {
 	{'c', op_char},
-	{'s', op_string},
-/*
+/*	{'s', op_string},
+*
 *	{'%', op_mod},
 *	{'d', op_digit},
 *	{'i', op_int},

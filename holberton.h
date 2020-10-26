@@ -16,7 +16,6 @@ typedef struct printf_
 } printf_;
 
 void _puts(char *str);
-int op_string(va_list args);
 int op_char(va_list args);
 
 #endif

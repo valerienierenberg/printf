@@ -5,11 +5,11 @@
 #include "holberton.h"
 #include <stddef.h>
 /**
-* op_string- prints string variable to stdout
+* print_string- prints string variable to stdout
 * @args: variable list of arguments
-* Return: integer
+* Return: void
 */
-int op_string(va_list args)
+void _puts(char *str)
 {
 	char *s = va_arg(args, char *);
 	unsigned int i;
@@ -35,7 +35,10 @@ int op_char(va_list args)
 	if (!c)
 		return (-1);
 
-	_putchar(c);
-	return (0);
+	else
+	{
+		_putchar(c);
+		return (0);
+	}
 }
 
