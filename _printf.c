@@ -11,10 +11,11 @@ int _printf(const char *format, ...)
 va_list args;
 int i = 0;
 int numprinted = 0;
-int (*f)(va_list);
 char *s;
+int j = 0;
+int (*f)(va_list);
 
-_printf ops[] = {
+printf_ ops[] = {
 	{'c', op_char},
 	{'s', op_string},
 	{'%', op_mod},
@@ -23,27 +24,35 @@ _printf ops[] = {
 	{'\0', NULL}
 };
 
-while (format)
+while (j < 5)
 {
-va_start(args, format);
-for (; i < numprinted; numprinted++)
-{
-	if (format[i] == "%")
+
+	while (format)
 	{
+		va_start(args, format);
+		for (; i < numprinted; numprinted++)
+		{
+			if (format[i] == '%')
+			{
+				i++;
+				if (format[i] == 'c')
+				{
+					i = va_arg(args, int);
+					_putchar(ops[i].f);
+				}
+				else if (format[i] == 's')
+				{
+					s = va_arg(args, char *);
+					_puts(s);
+				}
+				else if (format[i] == '\0')
+					return (0);
+			}
+		}
 		i++;
-		if (format[i] == 'c')
-			i = va_arg(args, char);
-			putchar(i);
-		else if (format[i] == 's')
-			s = va_arg(args, char *);
-			_puts(s);
-		else if (format[i] == '\0')
-			return (NULL);
 	}
-}
-i++;
-}
-va_end(args);
+	j++;
+	va_end(args);
 }
 return (numprinted);
 }
