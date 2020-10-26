@@ -38,3 +38,4 @@ int op_char(va_list args)
 	_putchar(c);
 	return (0);
 }
+
