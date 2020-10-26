@@ -37,7 +37,7 @@ while (j < 5)
 				i++;
 				if (format[i] == 'c')
 				{
-					(int)ops[i].f = va_arg(args, int);
+					i = va_arg(args, int);
 					_putchar(i);
 				}
 				else if (format[i] == 's')
