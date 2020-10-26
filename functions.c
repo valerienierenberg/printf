@@ -9,20 +9,14 @@
 * @a: character
 * Return: void
 */
-void print_string(char)
+void _puts(char *str)
 {
-	int i = 0;
-	va_list args;
+	int i;
 
-	va_start(args, str);
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
 
-	while (str)
-	{
-	str = va_arg(args, char *);
-		_putchar(str);
-		i++;
-	}
-va_end(args);
+	_putchar('\n');
 }
 
 /**
