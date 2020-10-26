@@ -26,3 +26,14 @@ void _puts(char *str)
 * Return: result of division of a by b
 */
 
+int op_char(va_list args)
+{
+	char c = va_arg(args, int);
+	if (!c)
+		return (-1);
+	else
+	{
+		_putchar(c);
+		return (0);
+	}
+}
