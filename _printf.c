@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	printf_ ops[] = {
 		{'s', op_string},
 		{'c', op_char},
-/**
+/*
 *	{'%', op_mod},
 *	{'d', op_digit},
 *	{'i', op_int},

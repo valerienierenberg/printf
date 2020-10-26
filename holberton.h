@@ -8,7 +8,12 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-
+/**
+ * struct printf_ - printf struct
+ * @op: char format specifier
+ * @f: function pointer
+ * description: printf struct
+ */
 typedef struct printf_
 {
 	char op;
