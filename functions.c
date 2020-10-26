@@ -9,14 +9,20 @@
 * @a: character
 * Return: void
 */
-void _puts(char *str)
+int op_string(va_list args)
 {
+	char *s = va_arg(args, int);
 	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
-		_putchar(str[i]);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (!*s)
+                return (-1);
 
+		_putchar(s[i]);
+	}
 	_putchar('\n');
+return(0);
 }
 
 /**

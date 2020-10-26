@@ -16,9 +16,8 @@ int (*f)(va_list);
 
 printf_ ops[] = {
 	{'c', op_char},
+	{'s', op_string},
 /**
-*	{'s', op_string},
-*
 *	{'%', op_mod},
 *	{'d', op_digit},
 *	{'i', op_int},
