@@ -9,14 +9,14 @@
 * @str: variable list of arguments
 * Return: void
 */
-void _puts(char *str)
+int op_string(va_list args)
 {
 	int i;
+	char *s = va_arg(args, char *);
 
-	for (i = 0; str[i] != '\0'; i++)
-		_putchar(str[i]);
-
-	_putchar('\n');
+	for (i = 0; s[i] != '\0'; i++)
+		_putchar(s[i]);
+	return (0);
 }
 
 /**
