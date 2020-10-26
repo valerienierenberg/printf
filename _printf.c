@@ -44,8 +44,7 @@ int _printf(const char *format, ...)
 				if (format[i] != '%' && format[i] == ops[j].op)
 				{
 					f = ops[j].f;
-					numprinted = f(args);
-					numprinted++;
+					numprinted += f(args);
 				}
 				if (format[i] == '%')
 				{
