@@ -65,3 +65,4 @@ return (-1);
 	va_end(args);
 	return (numprinted);
 }
+
