@@ -22,7 +22,6 @@ int _printf(const char *format, ...)
 		{'c', op_char},
 		{'d', op_digit},
 		{'i', op_int},
-		{'u', op_unsigned},
 		{'\0', NULL}
 	};
 
