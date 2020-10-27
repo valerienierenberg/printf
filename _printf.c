@@ -25,6 +25,9 @@ int _printf(const char *format, ...)
 		{'\0', NULL}
 	};
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(args, format);
 	while (format != NULL && format[i] != '\0')
 	{
@@ -60,8 +63,6 @@ int _printf(const char *format, ...)
 	i++;
 	}
 
-if (format == NULL)
-return (-1);
 	va_end(args);
 	return (numprinted);
 }
