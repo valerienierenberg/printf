@@ -9,6 +9,7 @@
 */
 int op_digit(va_list args)
 {
+	int count = 0;
 	char a;
 	int b;
 	char c;
@@ -17,6 +18,7 @@ int op_digit(va_list args)
 	if (n < 0)
 	{
 		_putchar('-');
+		count++;
 		a = ('0' - (n % 10));
 		n /= -10;
 	}
@@ -36,10 +38,12 @@ int op_digit(va_list args)
 	{
 		c = ((b % 10) + '0');
 		_putchar(c);
+		count++;
 		b /= 10;
 	}
 	_putchar(a);
+	count++;
 
-return (0);
+return (count);
 }
 
