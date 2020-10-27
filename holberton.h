@@ -24,5 +24,6 @@ int op_string(va_list args);
 int op_char(va_list args);
 int op_digit(va_list args);
 int op_int(va_list args);
+int op_unsigned(va_list args);
 
 #endif
