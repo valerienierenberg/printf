@@ -22,5 +22,6 @@ typedef struct printf_
 
 int op_string(va_list args);
 int op_char(va_list args);
+int op_digit(va_list args);
 
 #endif

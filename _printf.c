@@ -20,9 +20,8 @@ int _printf(const char *format, ...)
 	printf_ ops[] = {
 		{'s', op_string},
 		{'c', op_char},
+		{'d', op_digit},
 /*
-*	{'%', op_mod},
-*	{'d', op_digit},
 *	{'i', op_int},
 */
 		{'\0', NULL}
