@@ -15,8 +15,6 @@ int op_digit(va_list args)
 	char c;
 	int n = va_arg(args, char *);
 
-	if (!n)
-		return (0);
 	if (n < 0)
 	{
 		_putchar('-');
