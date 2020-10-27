@@ -2,7 +2,7 @@ README.md for printf repository:
 
 project goal: make a working function that mimics printf.
 
-_printf.c - function that prints anything to standard output.
+_printf.c - function that prints anything to standard output upon successful return.
 
 print_int.c - function that prints an integer.
 
