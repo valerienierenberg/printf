@@ -21,9 +21,7 @@ int _printf(const char *format, ...)
 		{'s', op_string},
 		{'c', op_char},
 		{'d', op_digit},
-/*
-*	{'i', op_int},
-*/
+		{'i', op_int},
 		{'\0', NULL}
 	};
 
