@@ -38,6 +38,7 @@ return (-1);
 		}
 		if (format[i] == '%')
 		{
+			j = 0;
 			i++;
 			while (ops[j].op)
 			{
