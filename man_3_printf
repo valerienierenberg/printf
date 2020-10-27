@@ -32,6 +32,12 @@ _printf("%c", character_variable)
 _printf("%s", string_variable)
 .br
 _printf("string")
+.SH RETURN VALUE
+.br
+The _printf function returns the number of
+characters printed (excluding the null byte used to end output to
+strings).
+.br
 .SH SEE ALSO
 printf()
 .br
