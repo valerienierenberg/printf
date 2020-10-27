@@ -16,7 +16,7 @@ int op_int(va_list args)
 	int n = va_arg(args, char *);
 
 	if (!n)
-		return (-1);
+		return (0);
 	if (n < 0)
 	{
 		_putchar('-');
