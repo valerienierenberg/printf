@@ -13,9 +13,8 @@ int op_string(va_list args)
 {
 	int i;
 	char *s = va_arg(args, char *);
-
-	if (!s)
-		return (-1);
+	if (s == NULL)
+		s = "(null)";
 	for (i = 0; s[i] != '\0'; i++)
 		_putchar(s[i]);
 	return (i);
