@@ -42,6 +42,11 @@ return (-1);
 			i++;
 			while (ops[j].op)
 			{
+				if (format[i] == ' ')
+				{
+					i++;
+					continue;
+				}
 				if (format[i] != '%' && format[i] == ops[j].op)
 				{
 					f = ops[j].f;
