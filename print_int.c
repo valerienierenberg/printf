@@ -46,4 +46,3 @@ int op_digit(va_list args)
 
 return (count);
 }
-
