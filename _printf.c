@@ -32,16 +32,18 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format != NULL && format[i] != '\0')
 	{
-/* if format[i] is '%', print '%' and move to the next int or char */
+/* if format[i] is not '%', print '%' and move to the next int or char */
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
 			numprinted++;
 		}
+/* if format[i] is '%', set j = 0 and iterate on */
 		if (format[i] == '%')
 		{
 			j = 0;
 			i++;
+/* while the struct exists */
 			while (ops[j].op)
 			{
 				if (format[i] == ' ')
