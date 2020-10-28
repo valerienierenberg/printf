@@ -14,6 +14,11 @@ int op_int(va_list args)
 	int n = va_arg(args, char *); /* set type of variable arguments to int */
 	int f = 0;
 
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	if (n < 0) /* argument is negative */
 	{
 		_putchar('-');
@@ -21,17 +26,16 @@ int op_int(va_list args)
 		if (n == -2147483648)
 		{
 			f = 1;
-			a = ('0' - (n % 10)); /* assign last digit to a (char type) */
+			a = ('0' - (n % 10)); /*assign last digit to char type*/
 			n /= -10; /* move over one digit (place) to the left */
 		}
 		else
 			(n = n * -1);
 	}
-	for (i = 31; n > 0; i--) /* loop thru argument moving one place to left each time */
+	for (i = 31; n > 0; i--)
 	{
 		b[i] = (n % 10);
-		n /= 10;
-	}
+		n /= 10; }
 	i++;
 	for (; i < 32; i++)
 	{
