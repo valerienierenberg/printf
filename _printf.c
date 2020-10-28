@@ -46,13 +46,16 @@ int _printf(const char *format, ...)
 /* while the struct exists */
 			while (ops[j].op)
 			{
+/* check for extra spaces and continue loop */
 				if (format[i] == ' ')
 				{
 					i++;
 					continue;
 				}
+/* if not '%', check for specifier */
 				if (format[i] != '%' && format[i] == ops[j].op)
 				{
+/* set function pointer to whichever specifier is entered */
 					f = ops[j].f;
 					numprinted += f(args);
 				}
