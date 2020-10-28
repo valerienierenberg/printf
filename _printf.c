@@ -32,6 +32,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format != NULL && format[i] != '\0')
 	{
+/* if format[i] is '%', print '%' and move to the next int or char */
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
