@@ -27,13 +27,13 @@ int op_int(va_list args)
 		else
 			(n = n * -1);
 	}
-	for (i = 0; n > 0; i++) /* loop thru argument moving one place to left each time */
+	for (i = 31; n > 0; i--) /* loop thru argument moving one place to left each time */
 	{
 		b[i] = (n % 10);
 		n /= 10;
 	}
-	b[i] = 100;
-	for (i = 0; b[i] < 10; i++)
+	i++;
+	for (; i < 32; i++)
 	{
 		c = b[i] + '0';
 		_putchar(c);
