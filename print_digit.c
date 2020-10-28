@@ -9,7 +9,7 @@
  */
 int op_int(va_list args)
 {
-	int count = 0, b, z = 0;
+	int count = 0, b;
 	char a, c;
 	int n = va_arg(args, char *); /* set type of variable arguments to int */
 
@@ -28,8 +28,6 @@ int op_int(va_list args)
 	b = 0;
 	while (n > 0) /* loop thru argument moving one place to left each time */
 	{
-		if (n % 10 == 0)
-			z++;
 		b = b * 10 + (n % 10);
 		n /= 10;
 	}
@@ -40,8 +38,6 @@ int op_int(va_list args)
 		count++;
 		b /= 10;
 	}
-	for (; z != 0; z--)
-		_putchar('0');
 	_putchar(a); /* print-right most digit */
 	count++;
 	return (count); /* = chars printed, now added to numprinted in _printf */
