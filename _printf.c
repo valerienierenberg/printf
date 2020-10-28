@@ -66,6 +66,7 @@ int _printf(const char *format, ...)
 				{
 					numprinted++;
 					_putchar('%');
+					break;
 				}
 				j++;
 			}
