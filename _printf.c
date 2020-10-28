@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format != NULL && format[i] != '\0')
 	{
-/* if format[i] is not '%', print '%' and move to the next int or char */
+/* if format[i] is not '%', print format[i] and increment through */
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
@@ -57,8 +57,10 @@ int _printf(const char *format, ...)
 				{
 /* set function pointer to whichever specifier is entered */
 					f = ops[j].f;
+/* */
 					numprinted += f(args);
 				}
+/* if format[i] is '%' advance to the next byte and print '%' */
 				if (format[i] == '%')
 				{
 					numprinted++;
