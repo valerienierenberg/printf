@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 /* checking to first see if format is NULL and if so, returning -1 */
 	if (format == NULL)
 		return (-1);
-
+/* if format[i] does not equal null byte, enter the first while loop */
 	va_start(args, format);
 	while (format != NULL && format[i] != '\0')
 	{
