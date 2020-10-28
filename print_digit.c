@@ -14,6 +14,7 @@ int op_int(va_list args)
 	int b;
 	char c;
 	int n = va_arg(args, char *);
+	int z = 0;
 
 	if (n < 0)
 	{
@@ -30,6 +31,8 @@ int op_int(va_list args)
 	b = 0;
 	while (n > 0)
 	{
+		if (n % 10 == 0)
+			z++;
 		b = b * 10 + (n % 10);
 		n /= 10;
 	}
@@ -41,6 +44,8 @@ int op_int(va_list args)
 		count++;
 		b /= 10;
 	}
+	for (; z != 0; z--)
+		_putchar('0');
 	_putchar(a);
 	count++;
 
