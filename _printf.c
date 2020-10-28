@@ -11,6 +11,7 @@
 */
 int _printf(const char *format, ...)
 {
+/* i - iterates through format string. j - iterates through struct. */
 	va_list args;
 	int i = 0;
 	int numprinted = 0;
@@ -32,13 +33,13 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format != NULL && format[i] != '\0')
 	{
-/* if format[i] is not '%', print format[i] and increment through */
+/* if format[i] is not '%', print value & add 1 to numprinted for each char */
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
 			numprinted++;
 		}
-/* if format[i] is '%', set j = 0 and iterate on */
+/* if format[i] is '%', set j = 0 and add 1 to i (to get to what is after '%') */
 		if (format[i] == '%')
 		{
 			j = 0;
@@ -57,10 +58,10 @@ int _printf(const char *format, ...)
 				{
 /* set function pointer to whichever specifier is entered */
 					f = ops[j].f;
-/* */
+/* Add 1 for each char printed from specifier's argument to numprinted */
 					numprinted += f(args);
 				}
-/* if format[i] is '%' advance to the next byte and print '%' */
+/* if format[i] is '%', add 1 to numprinted and print '%' */
 				if (format[i] == '%')
 				{
 					numprinted++;
@@ -73,6 +74,7 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(args);
+/* return the number of characters printed */
 	return (numprinted);
 }
 
