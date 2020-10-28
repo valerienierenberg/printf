@@ -9,36 +9,40 @@
  */
 int op_int(va_list args)
 {
-	int count = 0, b;
+	int count = 0, b[32], i;
 	char a, c;
 	int n = va_arg(args, char *); /* set type of variable arguments to int */
+	int f = 0;
 
 	if (n < 0) /* argument is negative */
 	{
 		_putchar('-');
 		count++; /* add to count each time a character is printed */
-		a = ('0' - (n % 10)); /* assign last digit to a (char type) */
-		n /= -10; /* move over one digit (place) to the left */
+		if (n == -2147483648)
+		{
+			f = 1;
+			a = ('0' - (n % 10)); /* assign last digit to a (char type) */
+			n /= -10; /* move over one digit (place) to the left */
+		}
+		else
+			(n = n * -1);
 	}
-	else /* argument is zero or positive */
+	for (i = 0; n > 0; i++) /* loop thru argument moving one place to left each time */
 	{
-		a = ((n % 10) + '0'); /* assign last digit to a (char type) */
-		n /= 10; /*move over one digit (place) to the left */
-	}
-	b = 0;
-	while (n > 0) /* loop thru argument moving one place to left each time */
-	{
-		b = b * 10 + (n % 10);
+		b[i] = (n % 10);
 		n /= 10;
 	}
-	while (b > 0) /* loop to print each digit (c), from left to right */
+	b[i] = 100;
+	for (i = 0; b[i] < 10; i++)
 	{
-		c = ((b % 10) + '0');
+		c = b[i] + '0';
 		_putchar(c);
 		count++;
-		b /= 10;
 	}
-	_putchar(a); /* print-right most digit */
-	count++;
+	if (f == 1)
+	{
+		_putchar(a);
+		count++;
+	}
 	return (count); /* = chars printed, now added to numprinted in _printf */
 }
