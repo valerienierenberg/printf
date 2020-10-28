@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 	int j = 0;
 	int (*f)(va_list);
 
+/* struct */
 	printf_ ops[] = {
 		{'s', op_string},
 		{'c', op_char},
@@ -24,7 +25,7 @@ int _printf(const char *format, ...)
 		{'i', op_int},
 		{'\0', NULL}
 	};
-
+/* checking to first see if format is NULL and if so, returning -1 */
 	if (format == NULL)
 		return (-1);
 
